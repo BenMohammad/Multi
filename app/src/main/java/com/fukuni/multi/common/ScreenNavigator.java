@@ -1,6 +1,7 @@
 package com.fukuni.multi.common;
 
 import com.fukuni.multi.demonstrattion.UiHandlerDemonstrationFragment;
+import com.fukuni.multi.demonstrattion.UiThreadDemonstrationFragment;
 import com.fukuni.multi.home.HomeFragment;
 import com.techyourchance.fragmenthelper.FragmentHelper;
 
@@ -26,5 +27,9 @@ public class ScreenNavigator {
 
     public void toUiHandlerDemo() {
         mFragmentHelper.replaceFragment(UiHandlerDemonstrationFragment.newInstance());
+    }
+
+    public void toUiThreadDemo() {
+        mFragmentHelper.replaceFragment(UiThreadDemonstrationFragment.newInstance());
     }
 }

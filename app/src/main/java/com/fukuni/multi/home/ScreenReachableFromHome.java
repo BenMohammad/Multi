@@ -2,7 +2,8 @@ package com.fukuni.multi.home;
 
 public enum ScreenReachableFromHome {
 
-    UIHANDLER_DEMO("UI Handler Demo");
+    UIHANDLER_DEMO("UI Handler Demo"),
+    UITHREAD_DEMO("UI Thread Demo");
 
     private String mName;
 
