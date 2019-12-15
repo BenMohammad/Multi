@@ -3,6 +3,7 @@ package com.fukuni.multi.common;
 import com.fukuni.multi.demonstrattion.UiHandlerDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.UiThreadDemonstrationFragment;
 import com.fukuni.multi.exercises.Exercise1Fragment;
+import com.fukuni.multi.exercises.Exercise2Fragment;
 import com.fukuni.multi.home.HomeFragment;
 import com.techyourchance.fragmenthelper.FragmentHelper;
 
@@ -36,5 +37,9 @@ public class ScreenNavigator {
 
     public void toExercise1() {
         mFragmentHelper.replaceFragment(Exercise1Fragment.newInstance());
+    }
+
+    public void toExercise2() {
+        mFragmentHelper.replaceFragment(Exercise2Fragment.newInstance());
     }
 }
