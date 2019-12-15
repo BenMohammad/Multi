@@ -70,8 +70,13 @@ public class MainActivity extends AppCompatActivity implements FragmentContainer
     }
 
     @Override
+    public void onBackPressed() {
+        screenNavigator.naigateBack();
+    }
+
+    @Override
     public void hideUpButton() {
-        mBackBtn.setVisibility(View.GONE);
+        mBackBtn.setVisibility(View.INVISIBLE);
     }
 
     @NonNull

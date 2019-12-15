@@ -15,8 +15,6 @@ import com.fukuni.multi.R;
 import com.fukuni.multi.common.BaseFragment;
 import com.fukuni.multi.common.ScreenNavigator;
 
-import java.util.List;
-
 public class HomeFragment extends BaseFragment implements HomeArrayAdapter.Listener {
 
     public static Fragment newInstance() {
@@ -38,6 +36,8 @@ public class HomeFragment extends BaseFragment implements HomeArrayAdapter.Liste
         mListScreenReachableFromHome = view.findViewById(R.id.list_screens);
         mListScreenReachableFromHome.setAdapter(homeArrayAdapter);
 
+        homeArrayAdapter.addAll(ScreenReachableFromHome.values());
+        homeArrayAdapter.notifyDataSetChanged();
         return view;
     }
 
@@ -51,8 +51,9 @@ public class HomeFragment extends BaseFragment implements HomeArrayAdapter.Liste
     @Override
     public void onScreenClicked(ScreenReachableFromHome screenReachableFromHome) {
         switch (screenReachableFromHome) {
-            case TEMP:
-                Toast.makeText(getContext(), "Temp Clicked", Toast.LENGTH_SHORT).show();
+            case UIHANDLER_DEMO:
+                screenNavigator.toUiHandlerDemo();
+                break;
         }
     }
 

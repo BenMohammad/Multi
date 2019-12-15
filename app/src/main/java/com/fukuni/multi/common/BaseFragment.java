@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.fukuni.multi.common.di.PresentationCompositionRoot;
+import com.fukuni.multi.home.HomeFragment;
 import com.techyourchance.fragmenthelper.HierarchicalFragment;
 
 public abstract class BaseFragment extends Fragment implements HierarchicalFragment {
@@ -32,7 +33,12 @@ public abstract class BaseFragment extends Fragment implements HierarchicalFragm
         }
 
 
-        super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Nullable
+    @Override
+    public Fragment getHierarchicalParentFragment() {
+        return HomeFragment.newInstance();
     }
 
     protected abstract String getScreenTitle();

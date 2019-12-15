@@ -2,7 +2,7 @@ package com.fukuni.multi.home;
 
 public enum ScreenReachableFromHome {
 
-    TEMP("Temp");
+    UIHANDLER_DEMO("UI Handler Demo");
 
     private String mName;
 
