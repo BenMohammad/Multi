@@ -1,5 +1,6 @@
 package com.fukuni.multi.common;
 
+import com.fukuni.multi.demonstrattion.CustomHandlerDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.UiHandlerDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.UiThreadDemonstrationFragment;
 import com.fukuni.multi.exercises.Exercise1Fragment;
@@ -41,5 +42,9 @@ public class ScreenNavigator {
 
     public void toExercise2() {
         mFragmentHelper.replaceFragment(Exercise2Fragment.newInstance());
+    }
+
+    public void toCustomHandlerDemo() {
+        mFragmentHelper.replaceFragment(CustomHandlerDemonstrationFragment.newInstance());
     }
 }
