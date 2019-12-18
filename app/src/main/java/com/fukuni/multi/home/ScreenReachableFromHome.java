@@ -9,7 +9,8 @@ public enum ScreenReachableFromHome {
     CUSTOM_HANDLER("Custom Handler"),
     ATOMICITY("Atomicity"),
     EXERCISE_3("Exercise 3"),
-    EXERCISE_4("Exercise 4");
+    EXERCISE_4("Exercise 4"),
+    THREAD_WAIT("Thread Wait ");
 
     private String mName;
 
