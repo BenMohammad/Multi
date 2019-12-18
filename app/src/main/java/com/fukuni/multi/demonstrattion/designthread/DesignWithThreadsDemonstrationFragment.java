@@ -75,7 +75,7 @@ public class DesignWithThreadsDemonstrationFragment extends BaseFragment impleme
     public void onBenchmarkCompleted(ProducerConsumerBenchmarkUseCase.Result result) {
         mProgress.setVisibility(View.INVISIBLE);
         mBtnStart.setEnabled(true);
-        mTxtReceivedMessagesCount.setText("MEssages received: " + result.getNumOfReceivedMessages());
+        mTxtReceivedMessagesCount.setText("Messages received: " + result.getNumOfReceivedMessages());
         mTxtExecutionTime.setText("Execution time: " + result.getExecutionTime());
     }
 }
