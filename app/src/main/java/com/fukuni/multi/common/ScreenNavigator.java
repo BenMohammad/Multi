@@ -4,6 +4,7 @@ import com.fukuni.multi.demonstrattion.AtomicityDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.CustomHandlerDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.UiHandlerDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.UiThreadDemonstrationFragment;
+import com.fukuni.multi.demonstrattion.designthread.DesignWithThreadsDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.threadwait.ThreadWaitDemonstrationFragment;
 import com.fukuni.multi.exercises.Exercise1Fragment;
 import com.fukuni.multi.exercises.Exercise2Fragment;
@@ -71,5 +72,9 @@ public class ScreenNavigator {
 
     public void toExercise5() {
         mFragmentHelper.replaceFragment(Exercise5Fragment.newInstance());
+    }
+
+    public void toDesignWithThreads() {
+        mFragmentHelper.replaceFragment(DesignWithThreadsDemonstrationFragment.newInstance());
     }
 }
