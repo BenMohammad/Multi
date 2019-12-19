@@ -1,4 +1,4 @@
-package com.fukuni.multi.exercises;
+package com.fukuni.multi.exercises.exercise5;
 
 import android.os.Bundle;
 import android.os.Handler;
