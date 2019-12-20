@@ -7,7 +7,7 @@ import com.fukuni.multi.common.BaseObservable;
 
 public class ProducerConsumerBenchmarkUseCase extends BaseObservable<ProducerConsumerBenchmarkUseCase.Listener> {
 
-    public interface Listener {
+    public static interface Listener {
         void onBenchmarkCompleted(Result result);
     }
 
