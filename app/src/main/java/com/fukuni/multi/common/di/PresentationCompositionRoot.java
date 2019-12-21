@@ -1,5 +1,8 @@
 package com.fukuni.multi.common.di;
 
+import android.os.Handler;
+import android.os.Looper;
+
 import androidx.fragment.app.FragmentActivity;
 
 import com.fukuni.multi.common.ScreenNavigator;
@@ -7,12 +10,15 @@ import com.fukuni.multi.common.ToolbarManipulator;
 import com.techyourchance.fragmenthelper.FragmentContainerWrapper;
 import com.techyourchance.fragmenthelper.FragmentHelper;
 
+import java.util.concurrent.ThreadPoolExecutor;
+
 public class PresentationCompositionRoot {
 
     private final FragmentActivity mActivity;
-
-    public PresentationCompositionRoot(FragmentActivity activity) {
+    private ApplicationCompositionRoot mApplicationCompositionRoot;
+    public PresentationCompositionRoot(FragmentActivity activity, ApplicationCompositionRoot applicationCompositionRoot) {
         this.mActivity = activity;
+        this.mApplicationCompositionRoot = applicationCompositionRoot;
     }
 
     public ScreenNavigator getScreenNavigator() {
@@ -28,5 +34,13 @@ public class PresentationCompositionRoot {
 
     public ToolbarManipulator getToolbarManipulator() {
         return (ToolbarManipulator) mActivity;
+    }
+
+    public Handler getMUiHandler() {
+        return new Handler(Looper.getMainLooper());
+    }
+
+    public ThreadPoolExecutor getThreadPool() {
+        return mApplicationCompositionRoot.getThreadPoolExecutor();
     }
 }

@@ -8,6 +8,7 @@ import com.fukuni.multi.common.BaseObservable;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProducerConsumerBenchmarkUseCase extends BaseObservable<ProducerConsumerBenchmarkUseCase.Listener> {
@@ -40,20 +41,22 @@ public class ProducerConsumerBenchmarkUseCase extends BaseObservable<ProducerCon
     public static final int BLOCKING_QUEUE_CAPACITY = 5;
 
     private final Object LOCK = new Object();
-    private final Handler mUIHandler = new Handler(Looper.getMainLooper());
     private final AtomicInteger mNumOfThreads = new AtomicInteger(0);
     private final MyBlockingQueue mBlockingQueue = new MyBlockingQueue(BLOCKING_QUEUE_CAPACITY);
 
-    private final ExecutorService mThreadsPool = Executors.newCachedThreadPool(
-            r -> {
-                Log.d("ThreadFactory", "thread: " + mNumOfThreads.incrementAndGet());
-                return new Thread(r);
-            }
-    );
+    private final ThreadPoolExecutor mThreadsPool;
+    private final Handler mUIHandler;
 
     private int mNumOfFinishedThreads;
     private int mNumOfReceivedMessages;
     private long mStartTimestamp;
+
+    public ProducerConsumerBenchmarkUseCase(Handler uiHandler, ThreadPoolExecutor threadsPool) {
+        this.mThreadsPool = threadsPool;
+        this.mUIHandler = uiHandler;
+    }
+
+
 
     public void startBenchmarkAndNotify() {
         synchronized (LOCK) {

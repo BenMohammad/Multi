@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.fukuni.multi.MyApplication;
 import com.fukuni.multi.common.di.PresentationCompositionRoot;
 import com.fukuni.multi.home.HomeFragment;
 import com.techyourchance.fragmenthelper.HierarchicalFragment;
@@ -17,7 +18,8 @@ public abstract class BaseFragment extends Fragment implements HierarchicalFragm
 
     protected final PresentationCompositionRoot getCompositionRoot() {
         if(presentationCompositionRoot == null) {
-            presentationCompositionRoot = new PresentationCompositionRoot(requireActivity());
+            presentationCompositionRoot = new PresentationCompositionRoot(requireActivity(),
+                    ((MyApplication)requireActivity().getApplication()).getApplicationCompositionRoot());
         }
         return presentationCompositionRoot;
     }
