@@ -13,6 +13,7 @@ import com.fukuni.multi.exercises.exercise3.Exercise3Fragment;
 import com.fukuni.multi.exercises.exercise4.Exercise4Fragment;
 import com.fukuni.multi.exercises.exercise5.Exercise5Fragment;
 import com.fukuni.multi.exercises.exercise6.Exercise6Fragment;
+import com.fukuni.multi.exercises.exercise7.Exercise7Fragment;
 import com.fukuni.multi.home.HomeFragment;
 import com.techyourchance.fragmenthelper.FragmentHelper;
 
@@ -86,5 +87,9 @@ public class ScreenNavigator {
 
     public void toDesignWithThreadPool() {
         mFragmentHelper.replaceFragment(DesignWithThreadPoolDemonstrationFragment.newInstance());
+    }
+
+    public void toExercise7() {
+        mFragmentHelper.replaceFragment(Exercise7Fragment.newInstance());
     }
 }

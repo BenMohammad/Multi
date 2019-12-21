@@ -14,7 +14,8 @@ public enum ScreenReachableFromHome {
     EXERCISE_5("Exercise 5"),
     DESIGN_WITH_THREADS("Design with Threads"),
     EXERCISE_6("Exercise 6"),
-    DESIFN_THREAD_POOL("Design with ThreadPool");
+    DESIGN_THREAD_POOL("Design with ThreadPool"),
+    EXERCISE_7("Exercise 7");
 
     private String mName;
 
