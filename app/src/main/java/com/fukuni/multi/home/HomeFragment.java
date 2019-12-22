@@ -97,6 +97,9 @@ public class HomeFragment extends BaseFragment implements HomeArrayAdapter.Liste
             case DESIGN_WITH_ASYNC:
                 screenNavigator.toDesignWithAsync();
                 break;
+            case DESIGN_WITH_THREADPOSTER:
+                screenNavigator.toDesignWithThreadPoster();
+                break;
         }
     }
 
