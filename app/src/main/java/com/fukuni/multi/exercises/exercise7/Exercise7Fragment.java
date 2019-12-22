@@ -27,7 +27,7 @@ public class Exercise7Fragment extends BaseFragment implements ComputeFactorialU
 
     private static final int MAX_TIMEOUT_MS = 1000;
     private EditText mEdtArgument;
-    private EditText mEdtTImeout;
+    private EditText mEdtTimeout;
     private Button mBtnStartWork;
     private TextView mTxtResults;
 
@@ -47,27 +47,20 @@ public class Exercise7Fragment extends BaseFragment implements ComputeFactorialU
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_exercise_7, container, false);
         mEdtArgument = view.findViewById(R.id.edt_argument);
-        mEdtTImeout = view.findViewById(R.id.edt_timeout);
+        mEdtTimeout = view.findViewById(R.id.edt_timeout);
         mTxtResults = view.findViewById(R.id.txt_result);
         mBtnStartWork = view.findViewById(R.id.btn_compute);
         mBtnStartWork.setOnClickListener(v ->  {
             if(mEdtArgument.getText().toString().isEmpty()) {
                 return;
             }
-
             mTxtResults.setText("");
             mBtnStartWork.setEnabled(false);
-
             InputMethodManager imm = (InputMethodManager) requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(mBtnStartWork.getWindowToken(), 0);
-
             int argument =  Integer.valueOf(mEdtArgument.getText().toString());
-
             mComputeFactorialUseCase.computeFactorialAndNotify(argument, getTimeout());
-
         });
-
-
         return view;
     }
 
@@ -86,10 +79,10 @@ public class Exercise7Fragment extends BaseFragment implements ComputeFactorialU
 
     private int getTimeout() {
         int timeout;
-        if(mEdtTImeout.getText().toString().isEmpty()) {
+        if(mEdtTimeout.getText().toString().isEmpty()) {
             timeout = MAX_TIMEOUT_MS;
         } else {
-            timeout = Integer.valueOf(mEdtTImeout.getText().toString());
+            timeout = Integer.valueOf(mEdtTimeout.getText().toString());
                 if(timeout > MAX_TIMEOUT_MS) {
                     timeout = MAX_TIMEOUT_MS;
                 }
