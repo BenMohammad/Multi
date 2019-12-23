@@ -18,6 +18,7 @@ import com.fukuni.multi.exercises.exercise5.Exercise5Fragment;
 import com.fukuni.multi.exercises.exercise6.Exercise6Fragment;
 import com.fukuni.multi.exercises.exercise7.Exercise7Fragment;
 import com.fukuni.multi.exercises.exercise8.Exercise8Fragment;
+import com.fukuni.multi.exercises.exercise9.Exercise9Fragment;
 import com.fukuni.multi.home.HomeFragment;
 import com.techyourchance.fragmenthelper.FragmentHelper;
 
@@ -111,5 +112,9 @@ public class ScreenNavigator {
 
     public void toDesignWithRxJava() {
         mFragmentHelper.replaceFragment(DesignWithRxJavaDemonstrationFragment.newInstance());
+    }
+
+    public void toExercise9() {
+        mFragmentHelper.replaceFragment(Exercise9Fragment.newInstance());
     }
 }
