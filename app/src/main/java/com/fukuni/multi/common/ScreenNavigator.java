@@ -5,6 +5,7 @@ import com.fukuni.multi.demonstrattion.CustomHandlerDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.UiHandlerDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.UiThreadDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.designasynctask.DesignWithAsyncTaskDemonstrationFragment;
+import com.fukuni.multi.demonstrattion.designrxjava.DesignWithRxJavaDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.designthread.DesignWithThreadsDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.designthreadpool.DesignWithThreadPoolDemonstrationFragment;
 import com.fukuni.multi.demonstrattion.designthreadposter.DesignWithThreadPosterDemonstrationFragment;
@@ -106,5 +107,9 @@ public class ScreenNavigator {
 
     public void toExercise8() {
         mFragmentHelper.replaceFragment(Exercise8Fragment.newInstance());
+    }
+
+    public void toDesignWithRxJava() {
+        mFragmentHelper.replaceFragment(DesignWithRxJavaDemonstrationFragment.newInstance());
     }
 }
