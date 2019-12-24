@@ -21,7 +21,8 @@ public enum ScreenReachableFromHome {
     EXERCISE_8("Exercise 8"),
     DESIGN_RXJAVA("Design with RxJava"),
     EXERCISE_9("Exercise 9"),
-    DESIGN_COROUTINES("Design with Coroutines");
+    DESIGN_COROUTINES("Design with Coroutines"),
+    EXERCISE_10("Exercise 10");
 
     private String mName;
 
