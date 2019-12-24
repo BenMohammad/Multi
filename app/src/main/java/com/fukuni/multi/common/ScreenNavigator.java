@@ -14,6 +14,7 @@ import com.fukuni.multi.demonstrattion.threadwait.ThreadWaitDemonstrationFragmen
 import com.fukuni.multi.exercises.exercise1.Exercise1Fragment;
 import com.fukuni.multi.exercises.exercise10.Exercise10Fragment;
 import com.fukuni.multi.exercises.exercise11.Exercise11Fragment;
+import com.fukuni.multi.exercises.exercise12.Exercise12Fragment;
 import com.fukuni.multi.exercises.exercise2.Exercise2Fragment;
 import com.fukuni.multi.exercises.exercise3.Exercise3Fragment;
 import com.fukuni.multi.exercises.exercise4.Exercise4Fragment;
@@ -131,5 +132,9 @@ public class ScreenNavigator {
 
     public void toExercise11() {
         mFragmentHelper.replaceFragment(Exercise11Fragment.newInstance());
+    }
+
+    public void toExercise12() {
+        mFragmentHelper.replaceFragment(Exercise12Fragment.newInstance() );
     }
 }
